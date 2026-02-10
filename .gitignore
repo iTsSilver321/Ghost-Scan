@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+venv/
+.venv/
+env/
+
+# Rust
+/ghost_core/target/
+**/*.rs.bk
+
+# IDE
+.vscode/
+.idea/
+
+# Binaries / Dist
+*.dll
+*.exe
+dist/
+build/
+*.spec
