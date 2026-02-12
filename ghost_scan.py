@@ -129,7 +129,9 @@ def main():
     
     # Limit host concurrency to avoid resource exhaustion
     # If using Rust engine with high threads, we want fewer concurrent hosts
-    host_concurrency = 50 if args.engine == "socket" else 10
+    # For socket engine, 50 hosts * 1000 ports = 50k threads/sockets which is too much.
+    # Reducing to 10 to keep it manageable.
+    host_concurrency = 10
     
     # Initialize Fingerprinter
     from analyzers.fingerprint import Fingerprinter
